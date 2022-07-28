@@ -21,7 +21,7 @@ Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 Route::get('/books', [BookController::class, 'index']);
 Route::get('/books/{id}', [BookController::class, 'show']);
-Route::get('/books/search/{title}', [BookController::class, 'search']);
+Route::get('/books/search/{property}/{value}', [BookController::class, 'search']);
 
 // Protected routes
 Route::group(['middleware' => 'auth:sanctum'], function () {

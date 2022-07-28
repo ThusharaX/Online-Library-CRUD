@@ -101,13 +101,19 @@ class BookController extends Controller
     }
 
     /**
-     * Search for a book by title.
+     * Search for a book by title, description, or genre.
      *
-     * @param  string  $title
+     * @param  string  $prperty
+     * @param  string  $value
      * @return \Illuminate\Http\Response
      */
-    public function search($title)
+    public function search($property, $value)
     {
-        return response($this->book->where('title', 'LIKE', "%$title%")->get(), Response::HTTP_OK);
+        // Check if the property is valid
+        if (!in_array($property, ['title', 'description', 'genre'])) {
+            return response(['message' => 'Invalid property'], Response::HTTP_BAD_REQUEST);
+        }
+
+        return response($this->book->where($property, 'LIKE', '%' . $value . '%')->get(), Response::HTTP_OK);
     }
 }
