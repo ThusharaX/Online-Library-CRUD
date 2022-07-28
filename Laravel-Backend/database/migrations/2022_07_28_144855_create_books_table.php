@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->string('genre');
+            $table->decimal('price', 8, 2);
+            $table->enum('status', ['borrowed', 'available', 'unavailable'])->default('available');
             $table->timestamps();
         });
     }
