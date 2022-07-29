@@ -29,6 +29,11 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/books', [BookController::class, 'store']);
     Route::put('/books/{id}', [BookController::class, 'update']);
     Route::delete('/books/{id}', [BookController::class, 'destroy']);
+    Route::put('/books/borrow/{id}', [BookController::class, 'borrow']);
+    Route::put('/books/return/{id}', [BookController::class, 'return']);
+
+    Route::get('/books/getSession/getSession', [BookController::class, 'getSession']);
+    Route::get('/books/clearSession/clearSession', [BookController::class, 'clearSession']);
 });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
