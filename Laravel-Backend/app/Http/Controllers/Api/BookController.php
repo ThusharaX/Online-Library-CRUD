@@ -23,7 +23,14 @@ class BookController extends Controller
      */
     public function index()
     {
-        return response($this->book->all(), Response::HTTP_OK);
+        // get url query parameters
+        $query = request()->query();
+
+        $page = $query['page'] ?? 1;
+        $limit = $query['limit'] ?? 2;
+
+        $books = $this->book->paginate($limit, '*', 'page', $page);
+        return response($books, Response::HTTP_OK);
     }
 
     /**
