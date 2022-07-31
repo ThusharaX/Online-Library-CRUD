@@ -43,5 +43,33 @@ class BookSeeder extends Seeder
             'genre' => 'Fiction',
             'price' => '4000',
         ]);
+
+        DB::table('books')->insert([
+            'title' => 'Time Machine',
+            'description' => 'Time Machine is a science fiction novel by American author Philip K. Dick. It was published in the United States in March 1985.',
+            'genre' => 'Fiction',
+            'price' => '5000',
+        ]);
+
+        DB::table('books')->insert([
+            'title' => 'Titanic',
+            'description' => 'Titanic is a 1997 American epic romance novel written by James Cameron, based on the 1997 film of the same name.',
+            'genre' => 'Fiction',
+            'price' => '6000',
+        ]);
+
+        DB::table('books')->insert([
+            'title' => 'Notebook',
+            'description' => 'Notebook is a novel by American author Philip K. Dick. It was published in the United States in March 1985.',
+            'genre' => 'Fiction',
+            'price' => '7000',
+        ]);
+
+        DB::table('books')->insert([
+            'title' => 'Love',
+            'description' => 'Love is a novel by American author Philip K. Dick. It was published in the United States in March 1985.',
+            'genre' => 'Fiction',
+            'price' => '8000',
+        ]);
     }
 }
