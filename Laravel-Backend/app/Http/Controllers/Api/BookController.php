@@ -138,15 +138,9 @@ class BookController extends Controller
             return response(['message' => 'Book not found'], Response::HTTP_NOT_FOUND);
         }
 
-        if ($request->session()->has('book'.$id)) {
-            return response(['message' => 'Book already borrowed'], Response::HTTP_BAD_REQUEST);
-        }
-
         // Change the status of the book to borrowed
         $book->status = 'borrowed';
         $book->save();
-
-        // $request->session()->push('book'.$id , $book);
 
         return response($book, Response::HTTP_OK);
     }
@@ -165,15 +159,9 @@ class BookController extends Controller
             return response(['message' => 'Book not found'], Response::HTTP_NOT_FOUND);
         }
 
-        if (!$request->session()->has('book'.$id)) {
-            return response(['message' => 'Book not borrowed'], Response::HTTP_BAD_REQUEST);
-        }
-
         // Change the status of the book to available
         $book->status = 'available';
         $book->save();
-
-        // $request->session()->pull('book'.$id);
 
         return response($book, Response::HTTP_OK);
     }
