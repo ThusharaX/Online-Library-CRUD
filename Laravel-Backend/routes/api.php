@@ -19,9 +19,6 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
-Route::get('/books', [BookController::class, 'index']);
-Route::get('/books/{id}', [BookController::class, 'show']);
-Route::get('/books/search/{property}/{value}', [BookController::class, 'search']);
 
 // Protected routes
 Route::group(['middleware' => 'auth:sanctum'], function () {
@@ -31,9 +28,13 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::delete('/books/{id}', [BookController::class, 'destroy']);
     Route::put('/books/borrow/{id}', [BookController::class, 'borrow']);
     Route::put('/books/return/{id}', [BookController::class, 'return']);
-
+    
     Route::get('/books/getSession/getSession', [BookController::class, 'getSession']);
     Route::get('/books/clearSession/clearSession', [BookController::class, 'clearSession']);
+    
+    Route::get('/books', [BookController::class, 'index']);
+    Route::get('/books/{id}', [BookController::class, 'show']);
+    Route::get('/books/search/{property}/{value}', [BookController::class, 'search']);
 });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
