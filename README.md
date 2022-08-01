@@ -33,10 +33,6 @@ php artisan key:generate
 ```
 
 ```
-php artisan migrate
-```
-
-```
 php artisan migrate:fresh --seed
 ```
 
@@ -61,6 +57,10 @@ cd Online-Library-CRUD/Vue-Frontend
 
 ```
 yarn install
+```
+
+```
+yarn lint
 ```
 
 ```
