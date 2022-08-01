@@ -119,6 +119,7 @@
       />
 
       <button
+        v-if="value"
         class="p-2 mb-5 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-blue-400 hover:text-white"
         @click="searchBooks"
       >
