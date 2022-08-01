@@ -1,5 +1,10 @@
 <h1>How to Run this project</h1>
 
+## Requirements
+
+* [Download XAMPP](https://www.apachefriends.org/download.html)
+* [Download Composer](https://getcomposer.org/download/)
+
 ## **Steps to run Laravel Backend**
 
 ## Step 1:
