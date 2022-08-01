@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="text-3xl font-bold mt-5 mb-5 text-center">Books</h1>
+    <h1 class="text-3xl font-bold mt-5 mb-5 text-center">My Books</h1>
 
     <!-- Get My Books -->
     <div class="flex flex-wrap justify-center">
